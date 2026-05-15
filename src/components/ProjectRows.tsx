@@ -4,6 +4,13 @@ import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
+    title: "AnimeGrid",
+    desc: "A sophisticated exploration of anime culture through a minimal, high-performance grid interface. Designed for seamless discovery and visual immersion.",
+    image: "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=1200&auto=format&fit=crop",
+    tags: ["Next.js", "Tailwind", "Motion"],
+    url: "https://animegridahs.vercel.app/"
+  },
+  {
     title: "Plant AI Platform",
     desc: "An intelligent ecosystem for plant enthusiasts, featuring real-time health monitoring and AI-driven care recommendations.",
     image: "https://picsum.photos/seed/plantai/800/600",
@@ -27,6 +34,12 @@ function ProjectRow(props: { project: typeof projects[0], index: number, key?: R
   const { project, index } = props;
   const isEven = index % 2 === 0;
 
+  const handleProjectClick = () => {
+    if (project.url) {
+      window.open(project.url, '_blank');
+    }
+  };
+
   return (
     <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 py-24 border-b border-white/5 last:border-0`}>
       <motion.div 
@@ -49,7 +62,10 @@ function ProjectRow(props: { project: typeof projects[0], index: number, key?: R
         <p className="text-white/60 font-body font-light text-lg leading-relaxed max-w-lg">
           {project.desc}
         </p>
-        <button className="liquid-glass-strong rounded-full px-8 py-4 text-white flex items-center gap-2 group">
+        <button 
+          onClick={handleProjectClick}
+          className="liquid-glass-strong rounded-full px-8 py-4 text-white flex items-center gap-2 group cursor-pointer"
+        >
           Explore Case Study
           <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </button>
@@ -69,7 +85,10 @@ function ProjectRow(props: { project: typeof projects[0], index: number, key?: R
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
-          <button className="liquid-glass-strong rounded-full px-8 py-4 text-white flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+          <button 
+            onClick={handleProjectClick}
+            className="liquid-glass-strong rounded-full px-8 py-4 text-white flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 cursor-pointer"
+          >
             View Project
             <ArrowUpRight className="w-4 h-4" />
           </button>
