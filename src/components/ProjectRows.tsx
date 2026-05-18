@@ -27,6 +27,13 @@ const projects = [
     desc: "Comprehensive visual identity for a tech startup, including logo design, typography systems, and digital brand guidelines.",
     image: "https://picsum.photos/seed/brand/800/600",
     tags: ["Graphic Design", "Brand Strategy"]
+  },
+  {
+    title: "Still Waters",
+    desc: "A serene and contemplative digital space designed to foster inner peace through ambient soundscapes and minimalist visuals.",
+    image: "https://picsum.photos/seed/stillwaters/800/600",
+    tags: ["React", "Motion", "Web Audio"],
+    url: "https://stillwatersahs.vercel.app/"
   }
 ];
 
